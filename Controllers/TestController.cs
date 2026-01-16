@@ -81,9 +81,10 @@ public class TestController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TestProjects>>> GetAll()
     {
+    throw new Exception();
         try
         {
-        throw new Exception();
+        
             var projects = new List<TestProjects>();
             using var conn = new NpgsqlConnection(_connectionString);
             await conn.OpenAsync();
